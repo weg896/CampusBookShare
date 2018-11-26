@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators} from '@angular/forms';
-import { LoginService } from '../login.service';
+import { LoginService } from '../../Services/login.service';
 import { ModalDirective } from 'angular-bootstrap-md';
 
 @Component({
