@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, Validators} from '@angular/forms';
+import { LoginService } from '../login.service';
+import { ModalDirective } from 'angular-bootstrap-md';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('loginModal') loginModal:ModalDirective;
+
+  constructor(private loginModalService:LoginService) { }
 
   ngOnInit() {
+    this.loginModalService.setModal(this.loginModal);
   }
 
+
+  modalFormLoginEmail = new FormControl('', Validators.email);
+  modalFormLoginPassword = new FormControl('', Validators.required);
+  
+  modalFormRegisterEmail = new FormControl('', Validators.email);
+  modalFormRegisterPassword = new FormControl('', Validators.required);
+  modalFormRegisterRepeatPassword = new FormControl('', Validators.required);
+
+  public showLogin(){
+
+  }
 }

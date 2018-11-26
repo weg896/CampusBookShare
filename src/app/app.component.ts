@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CurrentUser } from './current-user';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CampusBookShare';
+
+  islogin = CurrentUser.isLogin;
 }

@@ -1,0 +1,82 @@
+<!--Navbar-->
+<mdb-navbar id="campusBookShareNavbar" SideClass="navbar fixed-top navbar-expand-lg navbar-dark peach-gradient">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand>
+        <a class="navbar-brand" href="#">
+            <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="">
+        </a>
+    </mdb-navbar-brand>
+    <!-- Collapsible content -->
+    <links>
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect>Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Post</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Request</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Ready</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Leave</a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                Basic dropdown<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+                    <div class="divider dropdown-divider"></div>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+                </div>
+            </li>
+        </ul>
+        <!-- Links -->
+  
+        <ul class="navbar-nav ml-auto">
+  
+            <div *ngIf="islogin; then loginYes else loginNo"></div>
+    
+            <ng-template #loginYes>
+                <li class="nav-item">
+                    <a class="nav-link waves-light">1
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                </li>
+                <li class="nav-item avatar dropdown" dropdown>
+                    <a class="nav-link dropdown-toggle waves-light" dropdownToggle mdbWavesEffect mdbWavesEffect>
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" height="30" class="rounded-circle z-depth-0">
+                    </a>
+                    <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Profile</a>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log Out</a>
+                    </div>
+                </li>
+            </ng-template>
+  
+          <ng-template #loginNo>
+            <li class="nav-item">
+                <a (click)="showLoginModal()" class="nav-link waves-light"  data-toggle="modal" data-target="#modalLoginForm" mdbWavesEffect>Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>SingUp</a>
+            </li>
+          </ng-template>
+  
+         </ul>
+  
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->
+
+  <app-login></app-login>
