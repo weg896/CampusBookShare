@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MessageService } from '../../Services/message.service';
+import { BookTransaction } from '../../Models/book-transaction';
 
 @Component({
   selector: 'app-book-transaction-template',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookTransactionTemplateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private messageModalService:MessageService) {  }
 
   ngOnInit() {
+  }
+
+  @Input('testOwner') testOwner:string;
+
+
+  showMessageModal(){
+    this.messageModalService.showModal(this.testOwner);
   }
 
 }

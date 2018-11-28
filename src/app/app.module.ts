@@ -20,6 +20,13 @@ import { FindBooksPageComponent } from './Components/find-books-page/find-books-
 import { AvailableBooksListComponent } from './Components/available-books-list/available-books-list.component';
 import { BookTransactionTemplateComponent } from './Components/book-transaction-template/book-transaction-template.component';
 import { MessageComponent } from './Components/message/message.component';
+import { PaginationComponent } from './Components/pagination/pagination.component';
+import { BooksManagePageComponent } from './Components/books-manage-page/books-manage-page.component';
+import { LendManageTemplateComponent } from './Components/lend-manage-template/lend-manage-template.component';
+import { BorrowManageTemplateComponent } from './Components/borrow-manage-template/borrow-manage-template.component';
+import { RequestManageTemplateComponent } from './Components/request-manage-template/request-manage-template.component';
+import { PostManageTemplateComponent } from './Components/post-manage-template/post-manage-template.component';
+import { LendManageUserTemplateComponent } from './Components/lend-manage-user-template/lend-manage-user-template.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,14 @@ import { MessageComponent } from './Components/message/message.component';
     FindBooksPageComponent,
     AvailableBooksListComponent,
     BookTransactionTemplateComponent,
-    MessageComponent
+    MessageComponent,
+    PaginationComponent,
+    BooksManagePageComponent,
+    LendManageTemplateComponent,
+    BorrowManageTemplateComponent,
+    RequestManageTemplateComponent,
+    PostManageTemplateComponent,
+    LendManageUserTemplateComponent
   ],
   imports: [
     BrowserModule,

@@ -2,12 +2,12 @@
 
 <br/><br/>
 
-
+<app-message></app-message>
 
 <div class="container ">
 
-
-
+    <app-book-transaction-template *ngFor="let i of ['Tom','Jerry','Mary','Den','Jim']" [testOwner]="i"></app-book-transaction-template>
+    
 
 
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-available-books-list',
   templateUrl: './available-books-list.component.html',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvailableBooksListComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(){}
 
   
   ngOnInit() {
   }
+
+
 
 }
