@@ -11,32 +11,21 @@
     <links>
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link waves-light" mdbWavesEffect>Home</a>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Share Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect>Post</a>
+                <a class="nav-link waves-light" mdbWavesEffect>Find Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect>Request</a>
+                <a class="nav-link waves-light" mdbWavesEffect>Request List</a>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item" *ngIf="islogin">
                 <a class="nav-link waves-light" mdbWavesEffect>Ready</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="islogin">
                 <a class="nav-link waves-light" mdbWavesEffect>Leave</a>
-            </li>
-            <!-- Dropdown -->
-            <li class="nav-item dropdown" dropdown>
-                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                Basic dropdown<span class="caret"></span></a>
-                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
-                    <div class="divider dropdown-divider"></div>
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
-                </div>
             </li>
         </ul>
         <!-- Links -->
@@ -57,6 +46,7 @@
                     </a>
                     <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
                         <a class="dropdown-item waves-light" mdbWavesEffect href="#">Profile</a>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Ranking</a>
                         <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log Out</a>
                     </div>
                 </li>
@@ -79,4 +69,6 @@
   </mdb-navbar>
   <!--/.Navbar-->
 
-  <app-login></app-login>
+
+<app-login *ngIf="!islogin"></app-login>
+

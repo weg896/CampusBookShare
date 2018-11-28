@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators} from '@angular/forms';
 import { LoginService } from '../../Services/login.service';
 import { ModalDirective } from 'angular-bootstrap-md';
+import {CurrentUser} from '../../Models/current-user';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,9 @@ export class LoginComponent implements OnInit {
 
   @ViewChild('loginModal') loginModal:ModalDirective;
 
-  constructor(private loginModalService:LoginService) { }
+  constructor(private loginModalService:LoginService) {
+    
+  }
 
   ngOnInit() {
     this.loginModalService.setModal(this.loginModal);

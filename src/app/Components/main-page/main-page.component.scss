@@ -1,35 +1,87 @@
 .intro-header {
-    height: unset !important;
-  }
-  .top-nav-collapse {
-    background-color: #78909c !important;
-  }
-  .view {
-    height: 100vh !important;
-  }
+  height: unset !important;
+}
+.top-nav-collapse {
+  background-color: #78909c !important;
+}
+.view{
+  width: 100vw !important;
+  height: 66vh !important;
+}
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+@media (max-width: 768px) {
   .navbar:not(.top-nav-collapse) {
-    background: transparent !important;
+    background: #78909c !important;
   }
-  @media (max-width: 768px) {
-    .navbar:not(.top-nav-collapse) {
-      background: #78909c !important;
-    }
+}
+h1 {
+  letter-spacing: 8px;
+}
+h5 {
+  letter-spacing: 3px;
+}
+.hr-light {
+  border-top: 3px solid #fff;
+  width: 80px;
+}
+@media (max-width: 740px) {
+  .full-height,
+  .full-height body,
+  .full-height header,
+  .full-height header .view {
+    height: 700px;
   }
-  h1 {
-    letter-spacing: 8px;
-  }
-  h5 {
-    letter-spacing: 3px;
-  }
-  .hr-light {
-    border-top: 3px solid #fff;
-    width: 80px;
-  }
-  @media (max-width: 740px) {
-    .full-height,
-    .full-height body,
-    .full-height header,
-    .full-height header .view {
-      height: 700px;
-    }
-  }
+}
+
+#share-book-part{
+  background-image: url("../../../assets/ShareBooks.jpg");
+  background-size:  cover;
+  background-repeat: no-repeat;
+}
+
+#find-book-part{
+  background-image: url("../../../assets/FindBooks.jpg");
+  background-size:  cover;
+  background-repeat: no-repeat;
+}
+#request-list-part{
+  background-image: url("../../../assets/RequestList.jpg");
+  background-size:  cover;
+  background-repeat: no-repeat;
+}
+
+.left-container{
+  height:100%;
+  width:40%;
+  position: absolute;
+  margin-top:8.5%;
+  left:7%;
+}
+
+.right-container{
+  height:100%;
+  width:40%;
+  position: absolute;
+  margin-top:8%;
+  right:7%;
+}
+
+.description-font{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.text-shadow{
+  text-shadow: 1.5px 1.5px #313131;
+}
+
+.main-button{
+  background-color: #ffffff95;
+}
+
+.text-shadow-invert{
+  //text-shadow: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}

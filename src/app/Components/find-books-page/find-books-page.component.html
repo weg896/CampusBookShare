@@ -1,0 +1,38 @@
+
+<br/><br/>
+
+<div></div>
+
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Book Name :</div>
+    <div class="mb-3 col-5">
+      <input type="text" class="form-control" placeholder="Harry Potter and the Prisoner of Azkaban" required>
+    </div>
+  </div>
+  
+  <div class="row justify-content-start">
+    <div class="mb-3 offset-2 col-3 h-100">Author :</div>
+    <div class="mb-3 col-5">
+      <input type="text" class="form-control" placeholder="J.K. Rowling">
+    </div>
+  </div>
+
+  <div class="row justify-content-start">
+      <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Campus :</div>
+      <mat-form-field class="mb-3 col-5">
+          <mat-select placeholder="Choose a Campus">
+            <mat-option *ngFor="let campus of campusArray" [value]="campus.value">
+              {{campus.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  </div>
+
+  <div class="row justify-content-md-center">
+    <div class="mb-3">
+        <button mdbBtn type="button" color="primary" outline="true" mdbWavesEffect>Search</button>
+    </div>
+  </div>
+
+  </div>

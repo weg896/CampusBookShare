@@ -16,5 +16,5 @@ export class CurrentUser {
 
     static badge:number;
 
-    static isLogin:boolean = false;
+    static isLogin:boolean = true;
 }
