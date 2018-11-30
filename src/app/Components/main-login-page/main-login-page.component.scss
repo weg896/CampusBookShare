@@ -1,6 +1,49 @@
-.table-background{
-    background-color:white;
-    background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 50%),
-    linear-gradient(rgba(200,0,0,.5) 50%, transparent 50%);
-    background-size:50px 50px;
-}
+
+  .product-info {
+    float: left;
+    margin:auto;
+    min-width: 280;
+    min-height: 345;
+    border-radius: 7px 7px 7px 7px;
+  }
+  
+  .product-text{
+      height: 100%;
+      width: 100%;
+  }
+
+  .product-text h1 {
+    margin: 1.2em 1.5em;
+    text-align: center;
+    font-size: 34px;
+    color: #474747;
+  }
+  
+  .product-text h1,
+  .product-price-btn p {
+    font-family: 'Bentham', serif;
+  }
+  
+  .product-text h2 {
+    text-align: center;
+    font-size: 0.75em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #d2d2d2;
+    letter-spacing: 0.2em;
+  }
+  
+  .product-text p {
+    height: 100%;
+    margin: 2.4em 0 3.2em 0;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #8d8d8d;
+    line-height: 1.7em;
+    font-size: 15px;
+    font-weight: lighter;
+    overflow: hidden;
+  }
+
+  
