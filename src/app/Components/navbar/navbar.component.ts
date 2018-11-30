@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../Services/login.service';
 import { CurrentUser } from '../../Models/current-user';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,11 +10,14 @@ import { CurrentUser } from '../../Models/current-user';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  islogin:boolean = CurrentUser.isLogin;
+  islogin:boolean; 
   
-  constructor(private loginModalService:LoginService) {
-
-   }
+  constructor(
+    private loginModalService:LoginService, 
+    private router:Router,
+    private cookie:CookieService) {
+      this.islogin = (0 == this.cookie.get('islogin').localeCompare("true")); //CurrentUser.isLogin;
+  }
 
   ngOnInit() {
     
@@ -20,5 +25,10 @@ export class NavbarComponent implements OnInit {
 
   showLoginModal(){
     this.loginModalService.showModal();
+  }
+
+  public logout(){
+    CurrentUser.logout();
+    this.router.navigateByUrl('');
   }
 }

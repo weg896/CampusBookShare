@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostManageTemplateComponent } from './post-manage-template.component';
+import { MainLoginPageComponent } from './main-login-page.component';
 
-describe('PostManageTemplateComponent', () => {
-  let component: PostManageTemplateComponent;
-  let fixture: ComponentFixture<PostManageTemplateComponent>;
+describe('MainLoginPageComponent', () => {
+  let component: MainLoginPageComponent;
+  let fixture: ComponentFixture<MainLoginPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostManageTemplateComponent ]
+      declarations: [ MainLoginPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PostManageTemplateComponent);
+    fixture = TestBed.createComponent(MainLoginPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

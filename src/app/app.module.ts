@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
+import { CookieService } from 'ngx-cookie-service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,9 +26,8 @@ import { PaginationComponent } from './Components/pagination/pagination.componen
 import { BooksManagePageComponent } from './Components/books-manage-page/books-manage-page.component';
 import { LendManageTemplateComponent } from './Components/lend-manage-template/lend-manage-template.component';
 import { BorrowManageTemplateComponent } from './Components/borrow-manage-template/borrow-manage-template.component';
-import { RequestManageTemplateComponent } from './Components/request-manage-template/request-manage-template.component';
-import { PostManageTemplateComponent } from './Components/post-manage-template/post-manage-template.component';
 import { LendManageUserTemplateComponent } from './Components/lend-manage-user-template/lend-manage-user-template.component';
+import { MainLoginPageComponent } from './Components/main-login-page/main-login-page.component';
 
 @NgModule({
   declarations: [
@@ -45,12 +46,12 @@ import { LendManageUserTemplateComponent } from './Components/lend-manage-user-t
     BooksManagePageComponent,
     LendManageTemplateComponent,
     BorrowManageTemplateComponent,
-    RequestManageTemplateComponent,
-    PostManageTemplateComponent,
-    LendManageUserTemplateComponent
+    LendManageUserTemplateComponent,
+    MainLoginPageComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
     MatNativeDateModule,
@@ -59,7 +60,7 @@ import { LendManageUserTemplateComponent } from './Components/lend-manage-user-t
     AppRoutingModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, forwardRef } from '@angular/core';
 import { CurrentUser } from './Models/current-user';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,8 @@ import { CurrentUser } from './Models/current-user';
 export class AppComponent {
   title = 'CampusBookShare';
 
-  islogin = CurrentUser.isLogin;
+  constructor(@Inject(forwardRef(()=>CookieService)) cookie){
+    CurrentUser.setCookiesInstance(cookie);
+    console.log("app init");
+  }
 }

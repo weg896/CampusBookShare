@@ -18,6 +18,6 @@ export class MessageService {
 
   showModal(testowner:string){
     this.messageModal.show();
-    this.testOwnerObj.book_owner = testowner;
+    this.testOwnerObj.BookOwner = testowner;
   }
 }
