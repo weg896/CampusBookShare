@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   constructor(private loginModalService:LoginService, 
     private backendInstance:BackendService, 
     private router:Router) {
-    
   }
 
   ngOnInit() {
@@ -37,34 +36,21 @@ export class LoginComponent implements OnInit {
   modalFormRegisterRepeatPassword = new FormControl('', Validators.required);
 
   public loginToSystem(){
-    console.log("login");
-
-
-    var tempPara:HttpParams = new HttpParams().append("verify",''+this.modalFormLoginUsername + "|"+this.modalFormLoginPassword);
+    var tempPara:HttpParams = new HttpParams().append("verify",''+this.modalFormLoginUsername.value + "|"+this.modalFormLoginPassword.value);
     this.backendInstance.getFunction(BackendService.LOGIN,tempPara).subscribe(
-      (res:HttpResponse<any>)=>{
-        console.log(res.headers);
-        console.log(res.body);
-        console.log(res.ok);
-        console.log(res.status);
-        console.log(res.statusText);
-        console.log(res.type);
-        console.log(res.url);
-/*
+
+      (res)=>{
+        console.debug(res);
+        BackendService.debugHttpNormalResponse(res);
         CurrentUser.login();
         this.loginModal.hide();
-        this.router.navigateByUrl('mainLogin');*/
-      },
+        this.router.navigateByUrl('mainlogin');
+        this.router.navigateByUrl('mainlogin', {skipLocationChange: true}).then(()=>
+          this.router.navigate(["NavbarComponent"])); 
+        },
       (error:HttpErrorResponse)=>{
-        console.log(error.error);
-        console.log(error.headers);
-        console.log(error.message);
-        console.log(error.name);
-        console.log(error.ok);
-        console.log(error.status);
-        console.log(error.statusText);
-        console.log(error.type);
-        console.log(error.url);
+        BackendService.debugHttpErrorResponse(error);
+        
       }
     )
   }

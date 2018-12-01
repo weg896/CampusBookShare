@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BookTransaction, sample } from '../Models/book-transaction';
-import { HttpClient, HttpErrorResponse, HttpParams, HttpHandler, HttpRequest, HttpEvent } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpParams,HttpResponse, HttpHandler, HttpRequest, HttpEvent } from "@angular/common/http";
 import { restoreView } from '@angular/core/src/render3';
 import { Type } from '@angular/compiler';
 import { ApplicantList } from '../Models/applicant-list';
@@ -75,10 +75,26 @@ export class BackendService {
     return this.http.delete(this.REST_BASIC_URL + actionName + id, {headers:{'Access-Control-Allow-Origin': '*'}});
   }
 
-}
+  public static debugHttpNormalResponse(res:HttpResponse<any>){
+    console.debug('headers ---- '+res.headers);
+    console.debug('body ------- '+res.body);
+    console.debug('ok --------- '+res.ok);
+    console.debug('status ----- '+res.status);
+    console.debug('statusText - '+res.statusText);
+    console.debug('type ------- '+res.type);
+    console.debug('url -------- '+res.url);
+  }
 
-class backendServiceHandler implements HttpHandler{
-  handle(req: HttpRequest<any>): Observable<HttpEvent<any>>{
-    return new Observable();
+  public static debugHttpErrorResponse(error:HttpErrorResponse){
+    console.debug('error ------ '+error.error);
+    console.debug('headers ---- '+error.headers);
+    console.debug('message ---- '+error.message);
+    console.debug('name ------- '+error.name);
+    console.debug('ok --------- '+error.ok);
+    console.debug('status ----- '+error.status);
+    console.debug('statusText - '+error.statusText);
+    console.debug('type ------- '+error.type);
+    console.debug('url -------- '+error.url);
   }
 }
+
