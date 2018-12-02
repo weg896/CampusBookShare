@@ -2,21 +2,21 @@
 import { CookieService } from 'ngx-cookie-service';
 
 export class CurrentUser {
-    static Id           :number; // `orm:"column(pid);auto"`
-    static Username     :string; // `orm:"column(username);size(32)"`
-    static Nickname     :string; // `orm:"column(nickname);size(32);null"`
-    static Email        :string; // `orm:"column(email);size(32);null"`
-    static Campus       :string; // `orm:"column(campus);size(32);null"`
-    static StudentId    :string; // `orm:"column(student_id);size(16);null"`
-    static Avatar       :string; // `orm:"column(avatar);null"`
-    static LendCount    :number; // `orm:"column(lend_count)"`
-    static BorrowCount  :number; // `orm:"column(borrow_count)"`
-    static PostCount    :number; // `orm:"column(post_count)"`
-    static RequestCount :number; // `orm:"column(request_count)"`
-    static Score        :number; // `orm:"column(score)"`
-    static SignupDate   :string; // `orm:"column(signup_date);type(timestamp);auto_now"`
-    static Badge        :string; // `orm:"column(badge);size(32);null"`
-    static EmailVerifyed:boolean; // `orm:"column(email_verifyed);"`
+    Id           :number; // `orm:"column(pid);auto"`
+    Username     :string; // `orm:"column(username);size(32)"`
+    Nickname     :string; // `orm:"column(nickname);size(32);null"`
+    Email        :string; // `orm:"column(email);size(32);null"`
+    Campus       :string; // `orm:"column(campus);size(32);null"`
+    StudentId    :string; // `orm:"column(student_id);size(16);null"`
+    Avatar       :string; // `orm:"column(avatar);null"`
+    LendCount    :number; // `orm:"column(lend_count)"`
+    BorrowCount  :number; // `orm:"column(borrow_count)"`
+    PostCount    :number; // `orm:"column(post_count)"`
+    RequestCount :number; // `orm:"column(request_count)"`
+    Score        :number; // `orm:"column(score)"`
+    SignupDate   :string; // `orm:"column(signup_date);type(timestamp);auto_now"`
+    Badge        :string; // `orm:"column(badge);size(32);null"`
+    EmailVerifyed:boolean; // `orm:"column(email_verifyed);"`
 
     static loginHelper:LoginHelper;
 

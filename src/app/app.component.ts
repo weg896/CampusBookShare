@@ -5,7 +5,8 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  entryComponents: []
 })
 export class AppComponent {
   title = 'CampusBookShare';

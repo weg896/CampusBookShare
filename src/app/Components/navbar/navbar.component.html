@@ -3,7 +3,7 @@
 
     <!-- Navbar brand -->
     <mdb-navbar-brand>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href=''>
             <img src="../../../assets/logo.svg" height="30" alt="logo">
         </a>
     </mdb-navbar-brand>
@@ -12,13 +12,13 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect>Share Books</a>
+                <a class="nav-link waves-light" href="lendbooks" mdbWavesEffect>Share Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect>Find Books</a>
+                <a class="nav-link waves-light" href="findbooks" mdbWavesEffect>Find Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect>Request List</a>
+                <a class="nav-link waves-light" href="requestbooklist" mdbWavesEffect>Request List</a>
             </li>
 
             <li class="nav-item" *ngIf="islogin">
@@ -42,7 +42,7 @@
                 </li>
                 <li class="nav-item avatar dropdown" dropdown>
                     <a class="nav-link dropdown-toggle waves-light" dropdownToggle mdbWavesEffect mdbWavesEffect>
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" height="30" class="rounded-circle z-depth-0">
+                        <img src= "{{avatar}}" height="30" class="rounded-circle z-depth-0">
                     </a>
                     <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
                         <a class="dropdown-item waves-light" mdbWavesEffect href="#">Profile</a>

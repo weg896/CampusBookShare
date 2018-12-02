@@ -14,11 +14,18 @@ export class BookTransactionTemplateComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input('testOwner') testOwner:string;
+  @Input('byPerson') byPerson:string;
+  @Input('shareOrRequest') shareOrRequest:string;
+  @Input('borrowOrHelp') borrowOrHelp:string;
+  @Input('bookName') bookName:string;
+  @Input('author') author:string;
+  @Input('postTime') postTime:string;
+  @Input('expectReturnTime') expectReturnTime:string;
+  @Input('description') description:string;
 
 
   showMessageModal(){
-    this.messageModalService.showModal(this.testOwner);
+    this.messageModalService.showModal(this.byPerson);
   }
 
 }

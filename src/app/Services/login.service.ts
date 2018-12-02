@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md';
+import { CurrentUser } from '../Models/current-user';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import { ModalDirective } from 'angular-bootstrap-md';
 export class LoginService {
 
   loginModal:ModalDirective;
+  currentUser:CurrentUser = new CurrentUser();
 
   constructor() { }
 

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -7,6 +8,7 @@ import { MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
 import { CookieService } from 'ngx-cookie-service';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +30,7 @@ import { LendManageTemplateComponent } from './Components/lend-manage-template/l
 import { BorrowManageTemplateComponent } from './Components/borrow-manage-template/borrow-manage-template.component';
 import { LendManageUserTemplateComponent } from './Components/lend-manage-user-template/lend-manage-user-template.component';
 import { MainLoginPageComponent } from './Components/main-login-page/main-login-page.component';
+import { RequestBookListPageComponent } from './Components/request-book-list-page/request-book-list-page.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import { MainLoginPageComponent } from './Components/main-login-page/main-login-
     LendManageTemplateComponent,
     BorrowManageTemplateComponent,
     LendManageUserTemplateComponent,
-    MainLoginPageComponent
+    MainLoginPageComponent,
+    RequestBookListPageComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +63,7 @@ import { MainLoginPageComponent } from './Components/main-login-page/main-login-
     DemoMaterialModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot()
+
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

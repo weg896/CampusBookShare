@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl, Validators} from '@angular/forms';
 import { LoginService } from '../../Services/login.service';
 import { ModalDirective } from 'angular-bootstrap-md';
@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   @ViewChild('loginModal') loginModal:ModalDirective;
+  @ViewChild('alert') alert:ElementRef;
 
   constructor(private loginModalService:LoginService, 
     private backendInstance:BackendService, 
@@ -27,30 +28,53 @@ export class LoginComponent implements OnInit {
     this.loginModalService.setModal(this.loginModal);
   }
 
-
+  closeAlert(){
+    this.alert.nativeElement.classList.remove('show');
+  }
   modalFormLoginUsername= new FormControl('', Validators.required);
   modalFormLoginPassword = new FormControl('', Validators.required);
   
   modalFormRegisterEmail = new FormControl('', Validators.email);
   modalFormRegisterPassword = new FormControl('', Validators.required);
   modalFormRegisterRepeatPassword = new FormControl('', Validators.required);
+  errorMessage:string = "";
+
 
   public loginToSystem(){
     var tempPara:HttpParams = new HttpParams().append("verify",''+this.modalFormLoginUsername.value + "|"+this.modalFormLoginPassword.value);
     this.backendInstance.getFunction(BackendService.LOGIN,tempPara).subscribe(
 
       (res)=>{
-        console.debug(res);
-        BackendService.debugHttpNormalResponse(res);
         CurrentUser.login();
+        var tempPara2 = new HttpParams().append("singleuser",this.modalFormLoginUsername.value)
+        this.backendInstance.getFunction(BackendService.USER_PROFILE, tempPara2).subscribe(
+          (res)=>{
+            console.debug(typeof res);
+            //BackendService.debugHttpNormalResponse(res);
+            if(typeof res === 'string'  && res.localeCompare("<QuerySeter> no row found") === 0 ){
+              console.debug("no profile found");
+            }else{
+              this.loginModalService.currentUser.Avatar = res.Avatar;
+            }
+          },(error:HttpErrorResponse)=>{
+            BackendService.debugHttpErrorResponse(error);
+          }
+        )
+
         this.loginModal.hide();
         this.router.navigateByUrl('mainlogin');
-        this.router.navigateByUrl('mainlogin', {skipLocationChange: true}).then(()=>
-          this.router.navigate(["NavbarComponent"])); 
+        /*this.router.navigateByUrl('mainlogin', {skipLocationChange: true}).then(()=>
+          this.router.navigate(["mainlogin"])); */
         },
       (error:HttpErrorResponse)=>{
         BackendService.debugHttpErrorResponse(error);
-        
+
+        if(error.status == 409){
+          this.errorMessage = "Please check your username and password";
+        }else{
+          this.errorMessage = "Please check your network connection";
+        }
+        this.alert.nativeElement.classList.add("show");
       }
     )
   }

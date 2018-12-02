@@ -42,6 +42,12 @@
         </a>
         </div>
         <hr/>
+        <div #alert class="alert alert-danger alert-dismissible fade" role="alert">
+          <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>! </strong>{{errorMessage}}.
+        </div>
     </div>
   </div>
 

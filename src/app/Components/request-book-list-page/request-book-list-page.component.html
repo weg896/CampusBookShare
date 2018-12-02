@@ -1,0 +1,23 @@
+
+
+<br/><br/>
+
+<app-message></app-message>
+
+<div class="container ">
+
+    <app-book-transaction-template *ngFor="let i of bookTransactionList" 
+      [byPerson]="i.BookBorrower"
+      [shareOrRequest]="RequestBy"
+      [borrowOrHelp]='Help'
+      [bookName] = "i.BookName"
+      [author] = "i.BookAuthor"
+      [postTime] = "i.PostDate"
+      [expectReturnTime]  = "i.ExpectReturnTime"
+      [description]  = "i.BookDescription"
+      >
+    </app-book-transaction-template>
+    
+
+
+</div>

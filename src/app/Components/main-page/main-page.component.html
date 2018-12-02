@@ -7,7 +7,14 @@
                 Have spare books? Lend them to those who really need them in campus. 
                 Gain <strong class="h3 pink-text text-shadow-invert">HAPPY</strong> from helping others. 
                 Get priority of borrowing books for <strong class="h3 pink-text text-shadow-invert">FREE</strong>. 
-                Let the priceless knowledge pass.
+                Let the priceless knowledge pass. 
+                <a  color="primary" class="waves-light white-text" type="button" (click)="learnMore1.toggle()" mdbWavesEffect>
+                  <u>Learn More</u>
+                </a>
+            </h5>
+
+            <h5 class="font-up  white-text description-font text-shadow" mdbCollapse #learnMore1="bs-collapse">
+                <p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
             </h5>
             <a mdbBtn color="pink" class="wow fadeInDown waves-light btn " data-wow-delay="0.4s"
               mdbWavesEffect>SHARE A BOOK NOW</a>
@@ -24,6 +31,13 @@
                   Too expensive to buy a book? 
                   To many limitations in Library? 
                   Find books here and borrow them from the most generous people for <strong class="h3 green-text text-shadow-invert">FREE</strong>.
+                  <a  color="primary" class="waves-light white-text" type="button" (click)="learnMore2.toggle()" mdbWavesEffect>
+                    <u>Learn More</u>
+                  </a>
+              </h5>
+  
+              <h5 class="font-up  white-text description-font text-shadow" mdbCollapse #learnMore2="bs-collapse">
+                  <p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
               </h5>
               <a mdbBtn color="green" class="wow fadeInDown waves-light btn" data-wow-delay="0.4s"
                 mdbWavesEffect>FIND A BOOK NOW</a>
@@ -43,6 +57,12 @@
                   Looking for a book not avaliable in this website currently? 
                   <strong class="h3 cyan-text text-shadow-invert">POST</strong> information here. 
                   Let other people <strong class="h3 cyan-text text-shadow-invert">HELP</strong> you.
+                  <a  color="primary" class="waves-light white-text" type="button" (click)="learnMore3.toggle()" mdbWavesEffect>
+                    <u>Learn More</u>
+                  </a>
+              </h5>
+              <h5 class="font-up  white-text description-font text-shadow" mdbCollapse #learnMore3="bs-collapse">
+                  <p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
               </h5>
               <a mdbBtn color="cyan" class="wow fadeInDown waves-light btn" data-wow-delay="0.4s"
                 mdbWavesEffect>CHECK REQUEST LIST</a>

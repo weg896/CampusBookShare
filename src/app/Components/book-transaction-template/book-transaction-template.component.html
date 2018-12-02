@@ -2,17 +2,17 @@
   <div class="col-3 ">
     <img class="d-flex avatar-3 p-2 mx-auto w-100" src="../../../assets/defaultBook.jpg" alt="Generic placeholder image">
     <div class="col-12 m-2 text-center">
-      <button mdbBtn type="button" gradient="blue" size="sm" mdbWavesEffect>Small Button</button>
+      <button mdbBtn type="button" gradient="blue" size="sm" mdbWavesEffect>{{borrowOrHelp}}</button>
     </div>
   </div>
   <div class="col-9 row h6 bold indigo-text">
       <div class="col-12 pt-3"></div>
-      <div class="col-4 ">Book Name</div> <div class="col-8 ">Harry Porter and Some Good Catherine</div>
-      <div class="col-4 ">Author</div> <div class="col-8 ">Tom Garson</div> 
-      <div class="col-4 ">Post Time</div> <div class="col-8 ">2018-02-15</div> 
-      <div class="col-4 ">Expect Return Time</div> <div class="col-8 ">2018-09-12</div> 
-      <div class="col-4">Description</div> <div class="col-8 ">some thing yes yse asdfasdf</div> 
-      <div class="col-4 ">Owner Requester</div> <div class="col-4 ">{{testOwner}}</div>
+      <div class="col-4 ">Book Name</div> <div class="col-8 ">{{bookName}}</div>
+      <div class="col-4 ">Author</div> <div class="col-8 ">{{author}}</div> 
+      <div class="col-4 ">Post Time</div> <div class="col-8 ">{{postTime}}</div> 
+      <div class="col-4 ">Expect Return Time</div> <div class="col-8 ">{{expectReturnTime}}</div> 
+      <div class="col-4 ">Description</div> <div class="col-8 ">{{description}}</div> 
+      <div class="col-4 ">{{shareOrRequest}}</div> <div class="col-4 ">{{byPerson}}</div>
       <div class="col-4">
         <button color="indigo" outline="true" mdbBtn type="button" size="sm" mdbWavesEffect (click)="showMessageModal()">Send Message</button>
       </div>
