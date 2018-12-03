@@ -21,38 +21,6 @@ export class BackendService {
   public static readonly MESSAGER:string = "/messager/";
   public static readonly USER_PROFILE:string = "/user_profile/";
 
-   /* mockingBookList:Array<BookTransaction>;
-
- public getMockingBookList():void{
-    this.mockingBookList = new Array<BookTransaction>();
-
-    for( let item in sample.sampleArray){
-
-      var temp:BookTransaction = new BookTransaction();
-
-      var itemObj = JSON.parse(item);
-      temp.Id= itemObj.book_id;
-      temp.BookName= itemObj.book_name;
-      temp.BookAuthor= itemObj.book_author;
-      temp.BookDescription= itemObj.book_description;
-      temp.BookCover= itemObj.book_cover;
-    
-      temp.BookOwner= itemObj.book_owner;
-      temp.BookBorrower= itemObj.book_borrower;
-    
-      temp.Campus= itemObj.campus;
-    
-      temp.PostExpiration= itemObj.post_expiration; //date
-      temp.PostExpiration= itemObj.expect_return_time; //date
-      temp.ActualReturnTime= itemObj.actual_return_time; //date
-    
-      temp.PostDate= itemObj.post_date; //date
-    
-      temp.BookStatus= itemObj.book_status;
-      this.mockingBookList.push(temp);
-    }
-  }*/
-
   constructor(private http:HttpClient) { }
 
   public getFunction(actionName:string, playload:HttpParams):Observable<any> {
@@ -96,5 +64,6 @@ export class BackendService {
     console.debug('type ------- '+error.type);
     console.debug('url -------- '+error.url);
   }
+
 }
 

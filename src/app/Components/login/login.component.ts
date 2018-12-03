@@ -49,12 +49,27 @@ export class LoginComponent implements OnInit {
         var tempPara2 = new HttpParams().append("singleuser",this.modalFormLoginUsername.value)
         this.backendInstance.getFunction(BackendService.USER_PROFILE, tempPara2).subscribe(
           (res)=>{
-            console.debug(typeof res);
-            //BackendService.debugHttpNormalResponse(res);
-            if(typeof res === 'string'  && res.localeCompare("<QuerySeter> no row found") === 0 ){
+            console.debug(res.LendCount);
+            
+            if(!res.Id){
               console.debug("no profile found");
             }else{
-              this.loginModalService.currentUser.Avatar = res.Avatar;
+              localStorage.setItem('current.Id',''+res.Id);
+              localStorage.setItem('current.Username',''+res.Username);
+              localStorage.setItem('current.Nickname',''+res.Nickname);
+              localStorage.setItem('current.Email',''+res.Email);
+              localStorage.setItem('current.Campus',''+res.Campus);
+              localStorage.setItem('current.StudentId',''+res.StudentId);
+              localStorage.setItem('current.Avatar',''+res.Avatar);
+              localStorage.setItem('current.LendCount',''+res.LendCount);
+              localStorage.setItem('current.BorrowCount',''+res.BorrowCount);
+              localStorage.setItem('current.PostCount',''+res.PostCount);
+              localStorage.setItem('current.RequestCount',''+res.RequestCount);
+              localStorage.setItem('current.Score',''+res.Score);
+              localStorage.setItem('current.SignupDate',''+res.SignupDate);
+              localStorage.setItem('current.Badge',''+res.Badge);
+              localStorage.setItem('current.EmailVerifyed',''+res.EmailVerifyed);
+              localStorage.setItem('current.Rank',''+res.Rank);
             }
           },(error:HttpErrorResponse)=>{
             BackendService.debugHttpErrorResponse(error);
@@ -62,9 +77,8 @@ export class LoginComponent implements OnInit {
         )
 
         this.loginModal.hide();
-        this.router.navigateByUrl('mainlogin');
-        /*this.router.navigateByUrl('mainlogin', {skipLocationChange: true}).then(()=>
-          this.router.navigate(["mainlogin"])); */
+        this.router.navigateByUrl('mainlogin', {skipLocationChange: true}).then(()=>
+          this.router.navigate(["mainlogin"]));
         },
       (error:HttpErrorResponse)=>{
         BackendService.debugHttpErrorResponse(error);

@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MessageService } from '../../Services/message.service';
 import { BookTransaction } from '../../Models/book-transaction';
+import { CookieService } from 'ngx-cookie-service';
+import { CurrentUser } from 'src/app/Models/current-user';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-book-transaction-template',
@@ -9,7 +12,9 @@ import { BookTransaction } from '../../Models/book-transaction';
 })
 export class BookTransactionTemplateComponent implements OnInit {
 
-  constructor(private messageModalService:MessageService) {  }
+  constructor(
+    private messageModalService:MessageService,
+    private toastr:ToastrService) {  }
 
   ngOnInit() {
   }
@@ -22,10 +27,25 @@ export class BookTransactionTemplateComponent implements OnInit {
   @Input('postTime') postTime:string;
   @Input('expectReturnTime') expectReturnTime:string;
   @Input('description') description:string;
+  @Input('cssButton') cssButton:string;
+  @Input('cssText') cssText:string;
+  @Input('isLogin') isLogin:boolean;
 
 
   showMessageModal(){
-    this.messageModalService.showModal(this.byPerson);
+    if(this.isLogin){
+      this.messageModalService.showModal(this.byPerson);
+    }else{
+      this.toastr.info('Please login ');
+    }
   }
 
+
+  buttonOperation(){
+    if(this.isLogin){
+
+    }else{
+      this.toastr.info('Please login ');
+    }
+  }
 }

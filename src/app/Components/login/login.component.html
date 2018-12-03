@@ -13,12 +13,12 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <i class="fa fa-user prefix grey-text"></i>
-          <input type="text" id="orangeForm-username" [formControl]="modalFormLoginUsername" class="form-control validate" placeholder="Your Username">
+          <input type="text" id="orangeForm-username" [formControl]="modalFormLoginUsername" class="form-control validate" placeholder="Your Username" required>
         </div>
 
         <div class="md-form mb-4">
           <i class="fa fa-lock prefix grey-text"></i>
-          <input type="password" id="orangeForm-pass" [formControl]="modalFormLoginPassword" class="form-control validate" placeholder="Your Password">
+          <input type="password" id="orangeForm-pass" [formControl]="modalFormLoginPassword" class="form-control validate" placeholder="Your Password" required>
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">

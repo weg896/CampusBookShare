@@ -2,34 +2,34 @@
 <br/><br/>
 
   <div></div>
-
   <div class="container">
+    <form>
     <div class="row justify-content-start">
       <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Book Name :</div>
-      <div class="mb-3 col-5">
-        <input type="text" class="form-control" placeholder="Harry Potter and the Prisoner of Azkaban"  required>
-      </div>
+      <mat-form-field class="mb-3 col-5 ">
+          <input matInput [formControl]='bookNameInput' placeholder="Harry Potter and the Prisoner of Azkaban" required >
+      </mat-form-field>
     </div>
     
     <div class="row justify-content-start">
       <div class="mb-3 offset-2 col-3 h-100">Author :</div>
-      <div class="mb-3 col-5">
-        <input type="text" class="form-control" placeholder="J.K. Rowling">
-      </div>
+      <mat-form-field class="mb-3 col-5 ">
+          <input matInput [formControl]='bookAuthorInput' placeholder="J.K. Rowling">
+      </mat-form-field>
     </div>
 
     <div class="row justify-content-start">
       <div class="mb-3 offset-2 col-3 h-100 align-middle"><span class="red-text h4 bold">*</span> Expected Return Date :</div>
-      <mat-form-field class="example-full-width mb-3 col-5">
-          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="ERDpicker" placeholder="Expected Return Date" required>
+      <mat-form-field class=" mb-3 col-5">
+          <input matInput [formControl]="expectedReturnDateInput" [min]="today" [max]="maxDate" [matDatepicker]="ERDpicker" placeholder="Expected Return Date" required>
           <mat-datepicker-toggle matSuffix [for]="ERDpicker"></mat-datepicker-toggle>
           <mat-datepicker #ERDpicker></mat-datepicker>
         </mat-form-field>
     </div>
     <div class="row justify-content-start">
       <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Post Expiry Date :</div>
-      <mat-form-field class="example-full-width mb-3 col-5">
-        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="PEDpicker" placeholder="Post Expiry Date" required>
+      <mat-form-field class=" mb-3 col-5">
+        <input matInput [formControl]="postExpireDateInput" [min]="today" [max]="maxDate" [matDatepicker]="PEDpicker" placeholder="Post Expiry Date" required>
         <mat-datepicker-toggle matSuffix [for]="PEDpicker"></mat-datepicker-toggle>
         <mat-datepicker #PEDpicker></mat-datepicker>
       </mat-form-field>
@@ -38,7 +38,7 @@
     <div class="row justify-content-start">
         <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Campus :</div>
         <mat-form-field class="mb-3 col-5">
-            <mat-select placeholder="Choose a Campus">
+            <mat-select [formControl]="campusInput" placeholder="Choose a Campus">
               <mat-option *ngFor="let campus of campusArray" [value]="campus.value">
                 {{campus.label}}
               </mat-option>
@@ -48,18 +48,22 @@
 
     <div class="row justify-content-start">
       <div class="mb-3 offset-2 col-3 h-100">Description :</div>
-      <textarea id="description-textarea"  rows= "5" maxlength="350" class="mb-3 col-5" ></textarea>
+      <mat-form-field class="mb-3 col-5">
+        <textarea matInput placeholder="Leave a comment" [formControl]="descriptionInput"  id="description-textarea"  rows= "5" maxlength="350"  ></textarea>
+      </mat-form-field>
+   
     </div>
 
     <div class="row justify-content-start">
       <div class="mb-3 offset-2 col-3 h-100">Book Cover: </div>
-      <input type="file" class="mb-3 col-5">
+      <input [formControl]="bookCoverInput" type="file" class="mb-3 col-5">
     </div>
 
     <div class="row justify-content-md-center">
       <div class="mb-3">
-        <button mdbBtn type="button" color="default" outline="true" mdbWavesEffect>Commit</button>
+        <button mdbBtn type="submit" color="default" outline="true" (click)="shareABook()" mdbWavesEffect>Commit</button>
       </div>
     </div>
+</form>
 
     </div>

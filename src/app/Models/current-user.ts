@@ -17,6 +17,7 @@ export class CurrentUser {
     SignupDate   :string; // `orm:"column(signup_date);type(timestamp);auto_now"`
     Badge        :string; // `orm:"column(badge);size(32);null"`
     EmailVerifyed:boolean; // `orm:"column(email_verifyed);"`
+    Rank         :number;
 
     static loginHelper:LoginHelper;
 

@@ -8,6 +8,7 @@ import { MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
 import { CookieService } from 'ngx-cookie-service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -31,6 +32,7 @@ import { BorrowManageTemplateComponent } from './Components/borrow-manage-templa
 import { LendManageUserTemplateComponent } from './Components/lend-manage-user-template/lend-manage-user-template.component';
 import { MainLoginPageComponent } from './Components/main-login-page/main-login-page.component';
 import { RequestBookListPageComponent } from './Components/request-book-list-page/request-book-list-page.component';
+import { SearchPartComponent } from './Components/search-part/search-part.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { RequestBookListPageComponent } from './Components/request-book-list-pag
     BorrowManageTemplateComponent,
     LendManageUserTemplateComponent,
     MainLoginPageComponent,
-    RequestBookListPageComponent
+    RequestBookListPageComponent,
+    SearchPartComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { RequestBookListPageComponent } from './Components/request-book-list-pag
     BrowserAnimationsModule,
     DemoMaterialModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    ToastrModule.forRoot()
 
   ],
   providers: [CookieService],

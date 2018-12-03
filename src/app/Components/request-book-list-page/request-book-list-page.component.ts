@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpParams, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { BackendService } from '../../Services/backend.service';
 import { BookTransaction } from 'src/app/Models/book-transaction';
+import { CurrentUser } from 'src/app/Models/current-user';
 
 @Component({
   selector: 'app-request-book-list-page',
@@ -10,10 +11,15 @@ import { BookTransaction } from 'src/app/Models/book-transaction';
 })
 export class RequestBookListPageComponent implements OnInit {
 
-  bookTransactionList:BookTransaction[] = new Array<BookTransaction>();
+  requestBooksList:BookTransaction[] = new Array<BookTransaction>();
+  Help:string = "Help";
+  RequestedBy:string = "Requested By";
+  CssButton:string = "purple";
+  CssText:string = 'orange-text'; 
+  IsLogin:boolean = CurrentUser.isLogin();
 
   constructor(private backendInstance:BackendService) { 
-    var tempPara:HttpParams = new HttpParams().append('BookStatus','request');
+    var tempPara:HttpParams = new HttpParams().append('query','BookStatus:request');
     this.backendInstance.getFunction(BackendService.BOOK_TRANSACTION,tempPara).subscribe(
       (res)=>{
         console.debug(typeof res);
@@ -40,7 +46,7 @@ export class RequestBookListPageComponent implements OnInit {
             tempBookTransaction.OwnerComment = item.OwnerComment;
             tempBookTransaction.BorrowerComment = item.BorrowerComment;
             tempBookTransaction.BookStatus = item.BookStatus;
-            this.bookTransactionList.push(tempBookTransaction);
+            this.requestBooksList.push(tempBookTransaction);
           });
         }
       },(error:HttpErrorResponse)=>{

@@ -8,7 +8,6 @@ import { CurrentUser } from '../Models/current-user';
 export class LoginService {
 
   loginModal:ModalDirective;
-  currentUser:CurrentUser = new CurrentUser();
 
   constructor() { }
 
@@ -19,5 +18,4 @@ export class LoginService {
   showModal(){
     this.loginModal.show();
   }
-
 }

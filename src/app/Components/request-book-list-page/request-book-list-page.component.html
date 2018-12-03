@@ -5,16 +5,19 @@
 <app-message></app-message>
 
 <div class="container ">
-
-    <app-book-transaction-template *ngFor="let i of bookTransactionList" 
+  <h1 class="text-center"> All Requesting Books </h1>
+    <app-book-transaction-template *ngFor="let i of requestBooksList" 
       [byPerson]="i.BookBorrower"
-      [shareOrRequest]="RequestBy"
-      [borrowOrHelp]='Help'
+      [shareOrRequest]="RequestedBy"
+      [borrowOrHelp]="Help"
       [bookName] = "i.BookName"
       [author] = "i.BookAuthor"
       [postTime] = "i.PostDate"
       [expectReturnTime]  = "i.ExpectReturnTime"
       [description]  = "i.BookDescription"
+      [cssButton] = "CssButton"
+      [cssText] = "CssText"
+      [isLogin] = 'IsLogin'
       >
     </app-book-transaction-template>
     
