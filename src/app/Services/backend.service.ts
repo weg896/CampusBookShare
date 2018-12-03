@@ -31,7 +31,8 @@ export class BackendService {
     return this.http.get(this.REST_BASIC_URL + actionName + id, {responseType: 'json', headers:{'Access-Control-Allow-Origin': '*'}});
   }
 
-  public postFunction(actionName:string, playload:HttpParams):Observable<any> {
+
+  public postFunction(actionName:string, playload:string):Observable<any> {
     return this.http.post(this.REST_BASIC_URL + actionName, playload, { headers: {'Content-Type':'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin': '*'}});
   }
 

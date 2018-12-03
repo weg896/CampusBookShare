@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private router:Router,
     private cookie:CookieService,
     private aRoute:ActivatedRoute) {
-      this.islogin = (0 == this.cookie.get('islogin').localeCompare("true"));
+      this.islogin = CurrentUser.isLogin();
       this.navigationSubscription = this.router.events.subscribe((event:any)=>{
         /*var tempStr:string = localStorage.getItem("currentUserProflieItem");
         var tempObj = JSON.parse(tempStr);
@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
           this.avatar = tempObj.Avatar;
         }*/
         if(event instanceof NavigationEnd){
-          this.islogin = (0 == this.cookie.get('islogin').localeCompare("true"));
+          this.islogin = CurrentUser.isLogin();
         }
       });
   }

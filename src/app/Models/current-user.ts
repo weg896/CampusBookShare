@@ -38,6 +38,15 @@ export class CurrentUser {
 
     public static logout(){
         this.cookie.set('islogin','');
+        this.cookie.delete('username');
+    }
+
+    public static getUsername(){
+        return this.cookie.get('username');
+    }
+
+    public static setUsername(username:string){
+        this.cookie.set('username',username);
     }
 }
 

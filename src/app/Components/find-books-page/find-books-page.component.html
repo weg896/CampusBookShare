@@ -4,35 +4,54 @@
 <div></div>
 
 <div class="container">
-  <div class="row justify-content-start">
-    <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Book Name :</div>
-    <div class="mb-3 col-5">
-      <input type="text" class="form-control" placeholder="Harry Potter and the Prisoner of Azkaban" required>
+    <form>
+    <div class="row justify-content-start">
+      <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Book Name :</div>
+      <mat-form-field class="mb-3 col-5 ">
+          <input matInput [formControl]='bookNameInput' placeholder="Harry Potter and the Prisoner of Azkaban" required >
+      </mat-form-field>
     </div>
-  </div>
-  
-  <div class="row justify-content-start">
-    <div class="mb-3 offset-2 col-3 h-100">Author :</div>
-    <div class="mb-3 col-5">
-      <input type="text" class="form-control" placeholder="J.K. Rowling">
+    
+    <div class="row justify-content-start">
+      <div class="mb-3 offset-2 col-3 h-100">Author :</div>
+      <mat-form-field class="mb-3 col-5 ">
+          <input matInput [formControl]='bookAuthorInput' placeholder="J.K. Rowling">
+      </mat-form-field>
     </div>
-  </div>
 
-  <div class="row justify-content-start">
-      <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Campus :</div>
-      <mat-form-field class="mb-3 col-5">
-          <mat-select placeholder="Choose a Campus">
-            <mat-option *ngFor="let campus of campusArray" [value]="campus.value">
-              {{campus.label}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-  </div>
+    <div class="row justify-content-start">
+        <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Campus :</div>
+        <mat-form-field class="mb-3 col-5">
+            <mat-select [formControl]="campusInput" placeholder="Choose a Campus">
+              <mat-option *ngFor="let campus of campusArray" [value]="campus.value">
+                {{campus.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
 
   <div class="row justify-content-md-center">
     <div class="mb-3">
-        <button mdbBtn type="button" color="primary" outline="true" mdbWavesEffect>Search</button>
+        <button mdbBtn type="submit" color="primary" outline="true" mdbWavesEffect (click)="searchBooks()">Search</button>
     </div>
   </div>
-
+</form>
+  </div>
+  <app-message></app-message>
+  <div class="container ">
+      <app-book-transaction-template *ngFor="let i of bookTransactionList" 
+        [byPerson]="i.BookOwner"
+        [shareOrRequest]="SharedBy"
+        [borrowOrHelp]="Borrow"
+        [bookName] = "i.BookName"
+        [author] = "i.BookAuthor"
+        [postTime] = "i.PostDate"
+        [expectReturnTime]  = "i.ExpectReturnTime"
+        [description]  = "i.BookDescription"
+        [cssButton] = "CssButton"
+        [cssText] = "CssText"
+        [isLogin] = 'IsLogin'
+        >
+      </app-book-transaction-template>
+  
   </div>

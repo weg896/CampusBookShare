@@ -7,11 +7,11 @@ import { CurrentUser } from 'src/app/Models/current-user';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-lend-books-page',
-  templateUrl: './lend-books-page.component.html',
-  styleUrls: ['./lend-books-page.component.scss']
+  selector: 'app-request-book-page',
+  templateUrl: './request-book-page.component.html',
+  styleUrls: ['./request-book-page.component.scss']
 })
-export class LendBooksPageComponent implements OnInit {
+export class RequestBookPageComponent implements OnInit {
 
   constructor(
     private backendInstance:BackendService, 
@@ -35,8 +35,7 @@ export class LendBooksPageComponent implements OnInit {
   descriptionInput = new FormControl('');
   bookCoverInput = new FormControl('');
 
-  public shareABook(){
-    console.log(localStorage.getItem('jerry'));
+  public requestABook(){
 
     if(CurrentUser.isLogin()){
 
@@ -75,7 +74,7 @@ export class LendBooksPageComponent implements OnInit {
 
       var tempDatePostExpireString = ""+tempDatePostExpire.getFullYear() +"-"+ (tempDatePostExpire.getMonth()+1)+'-'+tempDatePostExpire.getDate();
       var tempDateReturnExpireString = ""+tempDateReturnExpire.getFullYear() +"-"+ (tempDateReturnExpire.getMonth()+1)+'-'+tempDateReturnExpire.getDate();
-      var currentUserUsername = localStorage.getItem('current.Username');
+      var currentUserUsername = localStorage.getItem('currentUser.Username');
 
       var tempPara2 = "{"+
         '"BookName":"' + this.bookNameInput.value + '",' +
@@ -85,8 +84,8 @@ export class LendBooksPageComponent implements OnInit {
         '"Campus":"'+this.campusInput.value + '",' +
         '"BookCover":"'+this.bookCoverInput.value + '",' +
         '"BookDescription":"'+this.descriptionInput.value + '",' +
-        '"BookOwner":"'+ currentUserUsername + '",' +
-        '"BookStatus":"'+"post" + '"}';
+        '"BookBorrower":"'+ currentUserUsername + '",' +
+        '"BookStatus":"'+"request" + '"}';
 
       console.debug(tempPara2.toString());
       this.backendInstance.postFunction(BackendService.BOOK_TRANSACTION, tempPara2).subscribe(
@@ -115,5 +114,4 @@ export class LendBooksPageComponent implements OnInit {
     console.log(this.descriptionInput.value);
     console.log(this.bookCoverInput.value);
   }
-  
 }

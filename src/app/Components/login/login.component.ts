@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
 
       (res)=>{
         CurrentUser.login();
+        CurrentUser.setUsername(this.modalFormLoginUsername.value);
         var tempPara2 = new HttpParams().append("singleuser",this.modalFormLoginUsername.value)
         this.backendInstance.getFunction(BackendService.USER_PROFILE, tempPara2).subscribe(
           (res)=>{
@@ -70,6 +71,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('current.Badge',''+res.Badge);
               localStorage.setItem('current.EmailVerifyed',''+res.EmailVerifyed);
               localStorage.setItem('current.Rank',''+res.Rank);
+              localStorage.setItem("jerry","jerry");
             }
           },(error:HttpErrorResponse)=>{
             BackendService.debugHttpErrorResponse(error);

@@ -43,7 +43,11 @@ export class BookTransactionTemplateComponent implements OnInit {
 
   buttonOperation(){
     if(this.isLogin){
-
+      if(this.borrowOrHelp.localeCompare("Help") == 0){
+        this.toastr.success("thank you for your help")
+      }else{
+        this.toastr.success("You have added to the borrow list");
+      }
     }else{
       this.toastr.info('Please login ');
     }

@@ -8,6 +8,8 @@ import { FindBooksPageComponent } from "./Components/find-books-page/find-books-
 import { AvailableBooksListComponent } from "./Components/available-books-list/available-books-list.component";
 import { BooksManagePageComponent } from "./Components/books-manage-page/books-manage-page.component";
 import { RequestBookListPageComponent } from './Components/request-book-list-page/request-book-list-page.component';
+import { UserProfilePageComponent } from './Components/user-profile-page/user-profile-page.component';
+import { RequestBookPageComponent } from './Components/request-book-page/request-book-page.component';
 
 const routes: Routes = [
   { path: '',   
@@ -16,8 +18,10 @@ const routes: Routes = [
     { path: 'lendbooks',      component:  LendBooksPageComponent},
     { path: 'findbooks',      component:  FindBooksPageComponent},
     { path: 'requestbooklist', component: RequestBookListPageComponent },
+    { path: 'requestbooks',      component:  RequestBookPageComponent},
     { path: 'availablebookslist',  component:  AvailableBooksListComponent},
     { path: 'booksmanage',      component:  BooksManagePageComponent},
+    { path: 'userprofile',      component:  UserProfilePageComponent},
     { path: '**',      component:  MainPageComponent}
   ]}
 ];

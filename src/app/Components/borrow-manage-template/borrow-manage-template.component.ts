@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from 'src/app/Services/backend.service';
 
 @Component({
   selector: 'app-borrow-manage-template',
@@ -11,5 +12,6 @@ export class BorrowManageTemplateComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
 }

@@ -33,6 +33,8 @@ import { LendManageUserTemplateComponent } from './Components/lend-manage-user-t
 import { MainLoginPageComponent } from './Components/main-login-page/main-login-page.component';
 import { RequestBookListPageComponent } from './Components/request-book-list-page/request-book-list-page.component';
 import { SearchPartComponent } from './Components/search-part/search-part.component';
+import { UserProfilePageComponent } from './Components/user-profile-page/user-profile-page.component';
+import { RequestBookPageComponent } from './Components/request-book-page/request-book-page.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { SearchPartComponent } from './Components/search-part/search-part.compon
     LendManageUserTemplateComponent,
     MainLoginPageComponent,
     RequestBookListPageComponent,
-    SearchPartComponent
+    SearchPartComponent,
+    UserProfilePageComponent,
+    RequestBookPageComponent
   ],
   imports: [
     BrowserModule,

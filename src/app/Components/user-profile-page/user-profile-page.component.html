@@ -1,0 +1,81 @@
+
+<br/><br/>
+
+<div></div>
+<div class="container">
+  <form>
+  <div class="row justify-content-start">
+    <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold"></span>Username :</div>
+    {{username}}
+  </div>
+
+  <div class="row justify-content-start">
+    <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold"></span>Nickname :</div>
+    <mat-form-field class="mb-3 col-5 ">
+        <input matInput [formControl]='nicknameInput'>
+    </mat-form-field>
+  </div>    
+
+  <div class="row justify-content-start">
+      <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold"></span>Student ID :</div>
+      <mat-form-field class="mb-3 col-5 ">
+          <input matInput [formControl]='studentIdInput'>
+      </mat-form-field>
+    </div>   
+
+<div class="row justify-content-start">
+  <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold"></span>Email :</div>
+  <mat-form-field class="mb-3 col-3 ">
+      <input type="email" matInput [formControl]='emailInput' required >
+  </mat-form-field>
+  <div *ngIf="isEmailVerify; then checkEmail; else resendEmail"></div>
+  <ng-template #checkEmail><i class="fa fa-check-circle green-text fa-2x" aria-hidden="true"></i></ng-template>
+  <ng-template #resendEmail><div>
+    <a type="button" class="btn btn-default btn-sm" (click)="sendVerifyEmail()">Verify Email</a>
+  </div></ng-template>
+</div> 
+  
+<div class="row justify-content-start">
+  <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold"></span>Lend Count :</div>
+  <div class="mb-3 col-5 ">
+    {{lendCount}}
+  </div>
+</div>
+ 
+<div class="row justify-content-start">
+  <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold"></span>Borrow Count :</div>
+  <div class="mb-3 col-5 ">
+    {{borrowCount}}
+  </div>
+</div>  
+
+<div class="row justify-content-start">
+  <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold"></span>Post Count :</div>
+  <div class="mb-3 col-5 ">
+    {{postCount}}
+  </div>
+</div>    
+
+<div class="row justify-content-start">
+    <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold"></span>Request Count :</div>
+    <div class="mb-3 col-5 ">
+      {{requestCount}}
+    </div>
+  </div>    
+
+ 
+<div class="row justify-content-start">
+  <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold"></span>Sign Up Date :</div>
+  <div class="mb-3 col-5 ">
+    {{signupDate}}
+  </div>
+</div>   
+
+  <div class="row justify-content-md-center">
+    <div class="mb-3">
+      <button mdbBtn type="submit" color="default" outline="true" (click)="changeProfile()" mdbWavesEffect>Change My Profile</button>
+    </div>
+  </div>
+</form>
+
+  </div>

@@ -7,7 +7,7 @@
 <div class="container ">
     <h1 class="text-center"> All Available Books for Borrow</h1>
     <app-book-transaction-template *ngFor="let i of avaliableBooksList" 
-      [byPerson]="i.BookBorrower"
+      [byPerson]="i.BookOwner"
       [shareOrRequest]="SharedBy"
       [borrowOrHelp]="Borrow"
       [bookName] = "i.BookName"
