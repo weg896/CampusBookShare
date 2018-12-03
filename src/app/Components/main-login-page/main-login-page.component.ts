@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUser } from 'src/app/Models/current-user';
 import { LoginService } from 'src/app/Services/login.service';
+import { WindowServiceService } from 'src/app/Services/window-service.service';
 
 @Component({
   selector: 'app-main-login-page',
@@ -9,7 +10,7 @@ import { LoginService } from 'src/app/Services/login.service';
 })
 export class MainLoginPageComponent implements OnInit {
 
-  constructor() { 
+  constructor(private winRef:WindowServiceService) { 
     this.lendNumber = localStorage.getItem('current.LendCount');
     this.borrowNumber =  localStorage.getItem('current.BorrowCount');
     this.rankingStatus = "You have post " + this.lendNumber +' books, '+ this.borrowNumber + ' of them has borrowed by others, Thank you for your generosity!';
@@ -20,5 +21,9 @@ export class MainLoginPageComponent implements OnInit {
   borrowNumber:string="";
   lendNumber:string="";
   rankingStatus:string="";
+
+  shareWiheYourFriend(){
+    this.winRef.nativeWindow.open('https://www.facebook.com/login/');
+  }
 
 }

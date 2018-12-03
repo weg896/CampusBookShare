@@ -35,6 +35,7 @@ import { RequestBookListPageComponent } from './Components/request-book-list-pag
 import { SearchPartComponent } from './Components/search-part/search-part.component';
 import { UserProfilePageComponent } from './Components/user-profile-page/user-profile-page.component';
 import { RequestBookPageComponent } from './Components/request-book-page/request-book-page.component';
+import { WindowServiceService } from './Services/window-service.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { RequestBookPageComponent } from './Components/request-book-page/request
     ToastrModule.forRoot()
 
   ],
-  providers: [CookieService],
+  providers: [CookieService, WindowServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

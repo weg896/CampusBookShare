@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lend-manage-template',
@@ -11,5 +11,13 @@ export class LendManageTemplateComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @Input('bookName') bookName:string;
+  @Input('bookAuthor') bookAuthor:string;
+  @Input('postDate') postDate:string;
+  @Input('postExpire') postExpire:string;
+  @Input('expectReturn') expectReturn:string;
+  @Input('bookStatus') bookStatus:string;
+  @Input('cssText') cssText:string;
 
 }

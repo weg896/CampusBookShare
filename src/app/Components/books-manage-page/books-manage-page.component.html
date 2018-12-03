@@ -1,13 +1,46 @@
+<br/><br/>
 <div class="container">
-  <div class="col-6">
+    <div class="row">
+      <div class="col-6">
+        <h1>My Shared Books</h1>
+        <app-lend-manage-template *ngFor="let i of postBooksList" 
+        [bookName] = "i.BookName"
+        [bookAuthor] = "i.BookAuthor"
+        [postDate] = "i.PostDate"
+        [postExpire] = "i.Pose"
+        [expectReturn]  = "i.ExpectReturnTime"
+        [cssText] = "CssText"
+        >
+      </app-lend-manage-template>
+    </div>
+
+    <div class="col-6">
       <h1>My Lend Books</h1>
-      <app-lend-manage-template></app-lend-manage-template>
 
+    </div>
   </div>
-
-  <div class="col-6">
-    <h1>My Borrowed Books</h1>
-
-  </div>
-
+  <div class="row">
+      <div class="col-6">
+          <h1>My Request Books</h1>
+          <app-lend-manage-template *ngFor="let i of postBooksList" 
+          [byPerson]="i.BookOwner"
+          [shareOrRequest]="SharedBy"
+          [borrowOrHelp]="Borrow"
+          [bookName] = "i.BookName"
+          [author] = "i.BookAuthor"
+          [postTime] = "i.PostDate"
+          [expectReturnTime]  = "i.ExpectReturnTime"
+          [description]  = "i.BookDescription"
+          [cssButton] = "CssButton"
+          [cssText] = "CssText"
+          [isLogin] = 'IsLogin'
+          >
+        </app-lend-manage-template>
+      </div>
+  
+      <div class="col-6">
+        <h1>My Borrowed Books</h1>
+  
+      </div>
+    </div>
 </div>
