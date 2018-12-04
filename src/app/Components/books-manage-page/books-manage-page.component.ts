@@ -24,10 +24,10 @@ export class BooksManagePageComponent implements OnInit {
   requestBooksList:BookTransaction[];
   borrowedBooksList:BookTransaction[];
 
-  CssTextShare:string;
-  CssTextLend:string;
-  CssTextRequest:string;
-  CssTextBorrowed:string;
+  CssTextShare:string = 'blue-text';
+  CssTextLend:string = 'teal-text';
+  CssTextRequest:string = 'yellow-text';
+  CssTextBorrowed:string = 'orange-text';
 
 
   getAllMyBooksList(){

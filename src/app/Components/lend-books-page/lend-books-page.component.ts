@@ -27,6 +27,7 @@ export class LendBooksPageComponent implements OnInit {
       ];
   }
 
+  today = new Date();
   bookNameInput = new FormControl('', Validators.required);
   bookAuthorInput = new FormControl('');
   expectedReturnDateInput = new FormControl('', Validators.required);

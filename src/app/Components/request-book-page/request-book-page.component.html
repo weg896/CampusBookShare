@@ -22,7 +22,7 @@
   <div class="row justify-content-start">
     <div class="mb-3 offset-2 col-3 h-100 align-middle"><span class="red-text h4 bold">*</span> Expected Return Date :</div>
     <mat-form-field class=" mb-3 col-5">
-        <input matInput [formControl]="expectedReturnDateInput" [min]="today" [max]="maxDate" [matDatepicker]="ERDpicker" placeholder="Expected Return Date" required>
+        <input matInput [formControl]="expectedReturnDateInput" [min]="today" [matDatepicker]="ERDpicker" placeholder="Expected Return Date" required>
         <mat-datepicker-toggle matSuffix [for]="ERDpicker"></mat-datepicker-toggle>
         <mat-datepicker #ERDpicker></mat-datepicker>
       </mat-form-field>
@@ -30,7 +30,7 @@
   <div class="row justify-content-start">
     <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Post Expiry Date :</div>
     <mat-form-field class=" mb-3 col-5">
-      <input matInput [formControl]="postExpireDateInput" [min]="today" [max]="maxDate" [matDatepicker]="PEDpicker" placeholder="Post Expiry Date" required>
+      <input matInput [formControl]="postExpireDateInput" [min]="today" [matDatepicker]="PEDpicker" placeholder="Post Expiry Date" required>
       <mat-datepicker-toggle matSuffix [for]="PEDpicker"></mat-datepicker-toggle>
       <mat-datepicker #PEDpicker></mat-datepicker>
     </mat-form-field>

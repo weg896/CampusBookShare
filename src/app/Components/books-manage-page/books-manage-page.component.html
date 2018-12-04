@@ -7,40 +7,55 @@
         [bookName] = "i.BookName"
         [bookAuthor] = "i.BookAuthor"
         [postDate] = "i.PostDate"
-        [postExpire] = "i.Pose"
+        [postExpire] = "i.PostExpiration"
         [expectReturn]  = "i.ExpectReturnTime"
-        [cssText] = "CssText"
+        [cssText] = "CssTextShare"
+        [bookStatus] = "i.BookStatus"
         >
       </app-lend-manage-template>
     </div>
 
     <div class="col-6">
       <h1>My Lend Books</h1>
-
+      <app-lend-manage-template *ngFor="let i of lendBooksList" 
+      [bookName] = "i.BookName"
+      [bookAuthor] = "i.BookAuthor"
+      [postDate] = "i.PostDate"
+      [postExpire] = "i.PostExpiration"
+      [expectReturn]  = "i.ExpectReturnTime"
+      [cssText] = "CssTextLend"
+      [bookStatus] = "i.BookStatus"
+      >
+    </app-lend-manage-template>
     </div>
   </div>
   <div class="row">
       <div class="col-6">
           <h1>My Request Books</h1>
-          <app-lend-manage-template *ngFor="let i of postBooksList" 
-          [byPerson]="i.BookOwner"
-          [shareOrRequest]="SharedBy"
-          [borrowOrHelp]="Borrow"
+          <app-lend-manage-template *ngFor="let i of requestBooksList" 
           [bookName] = "i.BookName"
-          [author] = "i.BookAuthor"
-          [postTime] = "i.PostDate"
-          [expectReturnTime]  = "i.ExpectReturnTime"
-          [description]  = "i.BookDescription"
-          [cssButton] = "CssButton"
-          [cssText] = "CssText"
-          [isLogin] = 'IsLogin'
+          [bookAuthor] = "i.BookAuthor"
+          [postDate] = "i.PostDate"
+          [postExpire] = "i.PostExpiration"
+          [expectReturn]  = "i.ExpectReturnTime"
+          [cssText] = "CssTextRequest"
+          [bookStatus] = "i.BookStatus"
           >
         </app-lend-manage-template>
       </div>
   
       <div class="col-6">
         <h1>My Borrowed Books</h1>
-  
+        <app-lend-manage-template *ngFor="let i of borrowedBooksList" 
+        [bookName] = "i.BookName"
+        [bookAuthor] = "i.BookAuthor"
+        [postDate] = "i.PostDate"
+        [postExpire] = "i.PostExpiration"
+        [expectReturn]  = "i.ExpectReturnTime"
+        [cssText] = "CssTextBorrowed"
+        [bookStatus] = "i.BookStatus"
+        >
+      </app-lend-manage-template>
       </div>
     </div>
 </div>

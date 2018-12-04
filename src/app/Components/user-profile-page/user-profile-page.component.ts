@@ -36,6 +36,7 @@ export class UserProfilePageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUserProfile();
   }
 
   username:string;
@@ -51,8 +52,7 @@ export class UserProfilePageComponent implements OnInit {
   signupDate:string;
 
   sendVerifyEmail(){
-    
-    var tempPara2 = new HttpParams().append("singleuser",this.username+"|"+this.emailInput.value)
+    var tempPara2 = new HttpParams().append("verify_email",this.username+"|"+this.emailInput.value)
     this.backendInstance.getFunction(BackendService.USER_PROFILE, tempPara2).subscribe(
       (res)=>{
         this.toastr.info('verify email has been send to '+this.emailInput.value);
@@ -69,6 +69,7 @@ export class UserProfilePageComponent implements OnInit {
   } 
 
   getUserProfile(){
+    console.log("get user profile function");
     var tempusername = CurrentUser.getUsername();
     var tempPara2 = new HttpParams().append("singleuser",tempusername)
     this.backendInstance.getFunction(BackendService.USER_PROFILE, tempPara2).subscribe(

@@ -3,7 +3,7 @@
 
     <!-- Navbar brand -->
     <mdb-navbar-brand>
-        <a class="navbar-brand" href=''>
+        <a class="navbar-brand" routerLink=''>
             <img src="../../../assets/logo.svg" height="30" alt="logo">
         </a>
     </mdb-navbar-brand>
@@ -12,22 +12,22 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link waves-light" href="lendbooks" mdbWavesEffect>Share Books</a>
+                <a class="nav-link waves-light" routerLink="/lendbooks" mdbWavesEffect>Share Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-light" href="findbooks" mdbWavesEffect>Find Books</a>
+                <a class="nav-link waves-light" routerLink="/findbooks" mdbWavesEffect>Find Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-light" href="requestbooklist" mdbWavesEffect>Request List</a>
+                <a class="nav-link waves-light" routerLink="/requestbooklist" mdbWavesEffect>Request List</a>
             </li>
             <!-->li class="nav-item">
-                <a class="nav-link waves-light" href="availablebookslist" mdbWavesEffect>Avaliable for Borrow</a>
+                <a class="nav-link waves-light" routerLink="/availablebookslist" mdbWavesEffect>Avaliable for Borrow</a>
             </li-->
             <li class="nav-item" *ngIf="islogin">
-                <a class="nav-link waves-light" href="mainlogin" mdbWavesEffect>Your Main Page</a>
+                <a class="nav-link waves-light" routerLink="/mainlogin" mdbWavesEffect>Your Main Page</a>
             </li>
             <!--li class="nav-item" *ngIf="islogin">
-                <a class="nav-link waves-light" mdbWavesEffect href="booksmanage">Books Management</a>
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="/booksmanage">Books Management</a>
             </li-->
 
         </ul>
@@ -48,8 +48,8 @@
                         <img src= "{{avatar}}" height="30" class="rounded-circle z-depth-0">
                     </a>
                     <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-                        <a class="dropdown-item waves-light" mdbWavesEffect href="userprofile">Profile</a>
-                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Ranking</a>
+                        <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/userprofile">Profile</a>
+                        <a class="dropdown-item waves-light" mdbWavesEffect >Ranking</a>
                         <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">Log Out</a>
                     </div>
                 </li>

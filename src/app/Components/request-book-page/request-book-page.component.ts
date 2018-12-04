@@ -27,6 +27,7 @@ export class RequestBookPageComponent implements OnInit {
       ];
   }
 
+  today = new Date();
   bookNameInput = new FormControl('', Validators.required);
   bookAuthorInput = new FormControl('');
   expectedReturnDateInput = new FormControl('', Validators.required);
@@ -74,7 +75,7 @@ export class RequestBookPageComponent implements OnInit {
 
       var tempDatePostExpireString = ""+tempDatePostExpire.getFullYear() +"-"+ (tempDatePostExpire.getMonth()+1)+'-'+tempDatePostExpire.getDate();
       var tempDateReturnExpireString = ""+tempDateReturnExpire.getFullYear() +"-"+ (tempDateReturnExpire.getMonth()+1)+'-'+tempDateReturnExpire.getDate();
-      var currentUserUsername = localStorage.getItem('currentUser.Username');
+      var currentUserUsername = CurrentUser.getUsername();
 
       var tempPara2 = "{"+
         '"BookName":"' + this.bookNameInput.value + '",' +
