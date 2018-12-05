@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ComponentFactoryResolver } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md';
 import { BookTransaction } from '../Models/book-transaction';
 
@@ -10,14 +10,12 @@ export class MessageService {
   messageModal:ModalDirective;
   constructor() { }
 
-  testOwnerObj:BookTransaction;
-  setModal(modal:ModalDirective, testOwnerObj:BookTransaction){
+  setModal(modal:ModalDirective){
     this.messageModal = modal;
-    this.testOwnerObj = testOwnerObj;
   }
 
-  showModal(testowner:string){
+  showModal(){
     this.messageModal.show();
-    this.testOwnerObj.BookOwner = testowner;
   }
+
 }

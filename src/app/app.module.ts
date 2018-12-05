@@ -36,6 +36,7 @@ import { SearchPartComponent } from './Components/search-part/search-part.compon
 import { UserProfilePageComponent } from './Components/user-profile-page/user-profile-page.component';
 import { RequestBookPageComponent } from './Components/request-book-page/request-book-page.component';
 import { WindowServiceService } from './Services/window-service.service';
+import { MessagePageComponent } from './Components/message-page/message-page.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { WindowServiceService } from './Services/window-service.service';
     RequestBookListPageComponent,
     SearchPartComponent,
     UserProfilePageComponent,
-    RequestBookPageComponent
+    RequestBookPageComponent,
+    MessagePageComponent
   ],
   imports: [
     BrowserModule,

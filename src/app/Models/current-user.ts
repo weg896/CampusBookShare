@@ -39,6 +39,7 @@ export class CurrentUser {
     public static logout(){
         this.cookie.set('islogin','');
         this.cookie.delete('username');
+        this.cookie.delete('contacter');
     }
 
     public static getUsername(){
@@ -47,6 +48,18 @@ export class CurrentUser {
 
     public static setUsername(username:string){
         this.cookie.set('username',username);
+    }
+
+    public static setContacter(contacter:string){
+        this.cookie.set('contacter',contacter);
+    }
+
+    public static getContacter(){
+        return this.cookie.get('contacter');
+    }
+
+    public static destoryContacter(){
+        this.cookie.delete('contacter');
     }
 }
 

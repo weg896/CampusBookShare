@@ -10,6 +10,11 @@
     <mat-form-field class="mb-3 col-5 ">
         <input matInput [formControl]='bookNameInput' placeholder="Harry Potter and the Prisoner of Azkaban" required >
     </mat-form-field>
+    <div class="mb-3 col-1">
+      <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </a>
+    </div>
   </div>
   
   <div class="row justify-content-start">
@@ -17,6 +22,11 @@
     <mat-form-field class="mb-3 col-5 ">
         <input matInput [formControl]='bookAuthorInput' placeholder="J.K. Rowling">
     </mat-form-field>
+    <div class="mb-3 col-1">
+      <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </a>
+    </div>
   </div>
 
   <div class="row justify-content-start">
@@ -26,6 +36,11 @@
         <mat-datepicker-toggle matSuffix [for]="ERDpicker"></mat-datepicker-toggle>
         <mat-datepicker #ERDpicker></mat-datepicker>
       </mat-form-field>
+      <div class="mb-3 col-1">
+        <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
+          <i class="fa fa-question-circle" aria-hidden="true"></i>
+        </a>
+      </div>
   </div>
   <div class="row justify-content-start">
     <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Post Expiry Date :</div>
@@ -34,6 +49,11 @@
       <mat-datepicker-toggle matSuffix [for]="PEDpicker"></mat-datepicker-toggle>
       <mat-datepicker #PEDpicker></mat-datepicker>
     </mat-form-field>
+    <div class="mb-3 col-1">
+      <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </a>
+    </div>
   </div>
 
   <div class="row justify-content-start">
@@ -45,6 +65,11 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
+        <div class="mb-3 col-1">
+          <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
+            <i class="fa fa-question-circle" aria-hidden="true"></i>
+          </a>
+        </div>
   </div>
 
   <div class="row justify-content-start">
@@ -52,12 +77,21 @@
     <mat-form-field class="mb-3 col-5">
       <textarea matInput placeholder="Leave a comment" [formControl]="descriptionInput"  id="description-textarea"  rows= "5" maxlength="350"  ></textarea>
     </mat-form-field>
- 
+    <div class="mb-3 col-1">
+      <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </a>
+    </div>
   </div>
 
   <div class="row justify-content-start">
     <div class="mb-3 offset-2 col-3 h-100">Book Cover: </div>
     <input [formControl]="bookCoverInput" type="file" class="mb-3 col-5">
+    <div class="mb-3 col-1">
+      <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </a>
+    </div>
   </div>
 
   <div class="row justify-content-md-center">

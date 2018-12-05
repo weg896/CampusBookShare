@@ -34,7 +34,9 @@ export class BookTransactionTemplateComponent implements OnInit {
 
   showMessageModal(){
     if(this.isLogin){
-      this.messageModalService.showModal(this.byPerson);
+      console.log('by person'+this.byPerson);
+      CurrentUser.setContacter(this.byPerson);
+      this.messageModalService.showModal();
     }else{
       this.toastr.info('Please login ');
     }

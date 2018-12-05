@@ -13,7 +13,6 @@ export class MainLoginPageComponent implements OnInit {
   constructor(private winRef:WindowServiceService) { 
     this.lendNumber = localStorage.getItem('current.LendCount');
     this.borrowNumber =  localStorage.getItem('current.BorrowCount');
-    this.rankingStatus = "You have post " + this.lendNumber +' books, '+ this.borrowNumber + ' of them has borrowed by others, Thank you for your generosity!';
   }
 
   ngOnInit() {
