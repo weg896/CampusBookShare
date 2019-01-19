@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class BackendService {
 
-  private readonly REST_BASIC_URL:string = "http://d4de8068.ngrok.io/v1";
+  private readonly REST_BASIC_URL:string = "http://localhost:8080/v1";
   public static readonly APPLY:string = "/apply/";
   public static readonly BOOK_TRANSACTION:string = "/book_transaction/";
   public static readonly BUG_REPORT:string = "/bug_report/";

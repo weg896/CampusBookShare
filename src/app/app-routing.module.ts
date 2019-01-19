@@ -11,10 +11,12 @@ import { RequestBookListPageComponent } from './Components/request-book-list-pag
 import { UserProfilePageComponent } from './Components/user-profile-page/user-profile-page.component';
 import { RequestBookPageComponent } from './Components/request-book-page/request-book-page.component';
 import { MessagePageComponent } from './Components/message-page/message-page.component';
+import { SignupPageComponent } from './Components/signup-page/signup-page.component';
 
 const routes: Routes = [
   { path: '',   
   children:[
+    { path: 'signup',         component: SignupPageComponent},
     { path: 'mainlogin',      component:  MainLoginPageComponent},
     { path: 'lendbooks',      component:  LendBooksPageComponent},
     { path: 'findbooks',      component:  FindBooksPageComponent},

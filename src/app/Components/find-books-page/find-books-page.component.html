@@ -32,17 +32,17 @@
     <div class="row justify-content-start">
         <div class="mb-3 offset-2 col-3 h-100"><span class="red-text h4 bold">*</span> Campus :</div>
         <mat-form-field class="mb-3 col-5">
-            <mat-select [formControl]="campusInput" placeholder="Choose a Campus">
-              <mat-option *ngFor="let campus of campusArray" [value]="campus.value">
-                {{campus.label}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <div class="mb-3 col-1">
-            <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
-              <i class="fa fa-question-circle" aria-hidden="true"></i>
-            </a>
-          </div>
+          <mat-select [formControl]="campusInput" placeholder="Choose a Campus">
+            <mat-option *ngFor="let campus of campusArray" [value]="campus.value">
+              {{campus.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="mb-3 col-1">
+          <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
+            <i class="fa fa-question-circle" aria-hidden="true"></i>
+          </a>
+        </div>
     </div>
 
   <div class="row justify-content-md-center">

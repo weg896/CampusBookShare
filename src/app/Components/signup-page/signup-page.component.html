@@ -1,3 +1,50 @@
-<p>
-  signup-page works!
-</p>
+
+<br/><br/><br/><br/>
+
+<div class="container">
+  <!-- Default form register -->
+  <div class="row">
+    <form class="text-center border border-light p-5 col-4 offset-4" >
+
+      <p class="h4 mb-4">Sign up</p>
+
+      <mat-form-field>
+        <input type="text" id="usernamereg" [formControl]="modalFormRegisterUsername" class="form-control" placeholder="Username" matInput required>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <input type="text" id="nicknamereg" [formControl]="modalFormRegisterNickname" class="form-control" placeholder="Nickname" matInput required>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <input type="email" id="emailreg" [formControl]="modalFormRegisterEmail" class="form-control" placeholder="E-mail" matInput required>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <input type="password" id="passwrodreg" [formControl]="modalFormRegisterPassword" class="form-control" placeholder="Password" matInput required>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <input type="number" id="studentidreg" [formControl]="modalFormRegisterStudentId" class="form-control" placeholder="Student ID" matInput required>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <mat-select [formControl]="modalFormRegisterCampus" placeholder="Choose a Campus">
+          <mat-option *ngFor="let campus of campusArray" [value]="campus.value">
+            {{campus.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br/>
+      <!-- Sign up button -->
+      <button mdbBtn color="warning" block="true" class="my-4" id="submitbtn" (click)="signUpNewuser()">Sign in</button>
+
+    </form>
+  </div>
+</div>

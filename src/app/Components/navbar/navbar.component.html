@@ -20,7 +20,7 @@
             <li class="nav-item">
                 <a class="nav-link waves-light" routerLink="/requestbooklist" mdbWavesEffect>Request List</a>
             </li>
-            <!-->li class="nav-item">
+            <!-- >li class="nav-item">
                 <a class="nav-link waves-light" routerLink="/availablebookslist" mdbWavesEffect>Avaliable for Borrow</a>
             </li-->
             <li class="nav-item" *ngIf="islogin">
@@ -66,7 +66,7 @@
                 <a (click)="showLoginModal()" class="nav-link waves-light"  data-toggle="modal" data-target="#modalLoginForm" mdbWavesEffect>Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect>SingUp</a>
+                <a routerLink="/signup" class="nav-link waves-light" mdbWavesEffect>SingUp</a>
             </li>
           </ng-template>
   
