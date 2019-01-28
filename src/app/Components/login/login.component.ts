@@ -40,8 +40,12 @@ export class LoginComponent implements OnInit {
   errorMessage:string = "";
 
 
-  public loginToSystem(){
-    var tempPara:HttpParams = new HttpParams().append("verify",''+this.modalFormLoginUsername.value + "|"+this.modalFormLoginPassword.value);
+  public loginThirdParty(){
+    var tempPara:HttpParams = new HttpParams().append("verify",''+"jerry" + "|"+"jerry");
+    this.loginHelper(tempPara);
+  }
+
+  private loginHelper(tempPara:HttpParams){
     this.backendInstance.getFunction(BackendService.LOGIN,tempPara).subscribe(
 
       (res)=>{
@@ -133,5 +137,11 @@ export class LoginComponent implements OnInit {
         this.alert.nativeElement.classList.add("show");
       }
     )
+  }
+
+
+  public loginToSystem(){
+    var tempPara:HttpParams = new HttpParams().append("verify",''+this.modalFormLoginUsername.value + "|"+this.modalFormLoginPassword.value);
+    this.loginHelper(tempPara);
   }
 }
