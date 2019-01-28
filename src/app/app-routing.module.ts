@@ -13,6 +13,7 @@ import { RequestBookPageComponent } from './Components/request-book-page/request
 import { MessagePageComponent } from './Components/message-page/message-page.component';
 import { SignupPageComponent } from './Components/signup-page/signup-page.component';
 import { RankingPageComponent } from './Components/ranking-page/ranking-page.component';
+import { BugReportComponent } from './Components/bug-report/bug-report.component';
 
 const routes: Routes = [
   { path: '',   
@@ -28,6 +29,7 @@ const routes: Routes = [
     { path: 'userprofile',      component:  UserProfilePageComponent},
     { path: 'messagepage',      component:  MessagePageComponent},
     { path: 'ranking',      component:  RankingPageComponent},
+    { path: 'bugreport', component:BugReportComponent},
     { path: '**',      component:  MainPageComponent}
   ]}
 ];

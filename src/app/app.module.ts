@@ -39,6 +39,7 @@ import { WindowServiceService } from './Services/window-service.service';
 import { MessagePageComponent } from './Components/message-page/message-page.component';
 import { RankingPageComponent } from './Components/ranking-page/ranking-page.component';
 import { RankPersonTemplateComponent } from './Components/rank-person-template/rank-person-template.component';
+import { BugReportComponent } from './Components/bug-report/bug-report.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { RankPersonTemplateComponent } from './Components/rank-person-template/r
     RequestBookPageComponent,
     MessagePageComponent,
     RankingPageComponent,
-    RankPersonTemplateComponent
+    RankPersonTemplateComponent,
+    BugReportComponent
   ],
   imports: [
     BrowserModule,

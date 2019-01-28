@@ -1,0 +1,26 @@
+
+<br/><br/>
+
+<div></div>
+<div class="container">
+  <form>
+
+  <div class="row justify-content-start">
+    <div class="mb-3 offset-2 col-3 h-100">Comment :</div>
+    <mat-form-field class="mb-3 col-5">
+      <textarea matInput placeholder="Leave a comment" [formControl]="descriptionInput"  id="description-textarea"  rows= "5" maxlength="350"  ></textarea>
+    </mat-form-field>
+    <div class="mb-3 col-1">
+      <a mdbTooltip="Tooltip on right" placement="right" mdbWavesEffect>
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="mb-3">
+      <button mdbBtn type="submit" color="default" outline="true" (click)="bugReport()" mdbWavesEffect>Repoort Bug</button>
+    </div>
+  </div>
+</form>
+
+  </div>
