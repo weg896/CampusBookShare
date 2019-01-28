@@ -10,16 +10,18 @@ import { WindowServiceService } from 'src/app/Services/window-service.service';
 })
 export class MainLoginPageComponent implements OnInit {
 
+  borrowNumber:string="";
+  postNumber:string="";
+  rankingStatus:string="";
+
   constructor(private winRef:WindowServiceService) { 
-    this.lendNumber = localStorage.getItem('current.LendCount');
+    this.postNumber = localStorage.getItem('current.PostCount');
     this.borrowNumber =  localStorage.getItem('current.BorrowCount');
   }
 
   ngOnInit() {
   }
-  borrowNumber:string="";
-  lendNumber:string="";
-  rankingStatus:string="";
+
 
   shareWiheYourFriend(){
     this.winRef.nativeWindow.open('https://www.facebook.com/login/');

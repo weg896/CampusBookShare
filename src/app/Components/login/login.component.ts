@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit {
         var tempPara2 = new HttpParams().append("singleuser",this.modalFormLoginUsername.value)
         this.backendInstance.getFunction(BackendService.USER_PROFILE, tempPara2).subscribe(
           (res)=>{
-            console.debug(res.LendCount);
-            
+            console.debug("lend count login: "+res.LendCount);
+            console.debug("Borrow count login: "+res.BorrowCount);
             if(!res.Id){
               console.debug("no profile found");
             }else{
@@ -91,9 +91,11 @@ export class LoginComponent implements OnInit {
             CurrentUser.login();
             CurrentUser.setUsername(this.modalFormLoginUsername.value);
             var tempPara2 = new HttpParams().append("singleuser",this.modalFormLoginUsername.value)
+            console.log("*** " +tempPara2);
             this.backendInstance.getFunction(BackendService.USER_PROFILE, tempPara2).subscribe(
               (res)=>{
-                console.debug(res.LendCount);
+                console.debug("lend count login: "+res);
+                console.debug("Borrow count login: "+res.BorrowCount);
                 
                 if(!res.Id){
                   console.debug("no profile found");

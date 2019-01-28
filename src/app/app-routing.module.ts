@@ -12,6 +12,7 @@ import { UserProfilePageComponent } from './Components/user-profile-page/user-pr
 import { RequestBookPageComponent } from './Components/request-book-page/request-book-page.component';
 import { MessagePageComponent } from './Components/message-page/message-page.component';
 import { SignupPageComponent } from './Components/signup-page/signup-page.component';
+import { RankingPageComponent } from './Components/ranking-page/ranking-page.component';
 
 const routes: Routes = [
   { path: '',   
@@ -26,6 +27,7 @@ const routes: Routes = [
     { path: 'booksmanage',      component:  BooksManagePageComponent},
     { path: 'userprofile',      component:  UserProfilePageComponent},
     { path: 'messagepage',      component:  MessagePageComponent},
+    { path: 'ranking',      component:  RankingPageComponent},
     { path: '**',      component:  MainPageComponent}
   ]}
 ];

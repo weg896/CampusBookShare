@@ -1,0 +1,20 @@
+<br/><br/>
+
+<app-message></app-message>
+
+<div class="container ">
+    <h1 class="text-center"> Top 5 Users</h1>
+    <app-rank-person-template *ngFor="let item of topUsersArray" 
+      [tUsername] = "item.Username"
+      [tNickname] = "item.Nickname"
+      [tLendCount] = "item.LendCount"
+      [tBorrowCount] = "item.BorrowCount"
+      [tPostCount] = "item.PostCount"
+      [tRequestCount] = "item.RequestCount"
+      [tScore] = "item.Score"
+      [tBadge] = "item.Badge"
+      [tCampus] = "item.Campus"
+      >
+    </app-rank-person-template>
+
+</div>

@@ -37,6 +37,8 @@ import { UserProfilePageComponent } from './Components/user-profile-page/user-pr
 import { RequestBookPageComponent } from './Components/request-book-page/request-book-page.component';
 import { WindowServiceService } from './Services/window-service.service';
 import { MessagePageComponent } from './Components/message-page/message-page.component';
+import { RankingPageComponent } from './Components/ranking-page/ranking-page.component';
+import { RankPersonTemplateComponent } from './Components/rank-person-template/rank-person-template.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { MessagePageComponent } from './Components/message-page/message-page.com
     SearchPartComponent,
     UserProfilePageComponent,
     RequestBookPageComponent,
-    MessagePageComponent
+    MessagePageComponent,
+    RankingPageComponent,
+    RankPersonTemplateComponent
   ],
   imports: [
     BrowserModule,

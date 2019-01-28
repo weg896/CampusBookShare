@@ -73,7 +73,7 @@ export class SignupPageComponent implements OnInit {
       '"LendCount": 0,'+
       '"PostCount": 0,'+
       '"RequestCount": 0,'+
-      '"Score": 0,'+
+      '"Score": 50,'+
       '"StudentId":"'+ studentidObj.value +'"}';
 
     this.backendInstance.postFunction(BackendService.LOGIN, tempPara).subscribe(
